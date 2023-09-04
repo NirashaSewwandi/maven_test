@@ -82,8 +82,8 @@
     <checkModificationExcludes>
         <checkModificationExclude>pom.xml</checkModificationExclude>
     </checkModificationExcludes>
-    <localCheckout>true</localCheckout>
-         <pushChanges>false</pushChanges>
+    <!-- <localCheckout>true</localCheckout>
+    <pushChanges>false</pushChanges> -->
   </configuration>
 </plugin>
     
