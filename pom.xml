@@ -5,7 +5,7 @@
     <groupId>io.github.nirashasewwandi</groupId>
     <artifactId>demo</artifactId>
     <version>2.1.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
 
     <build>
@@ -103,6 +103,41 @@
          <pushChanges>false</pushChanges>
   </configuration>
 </plugin>
+
+
+
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9</version>
+        <executions>
+            <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                    <goal>jar</goal>
+                </goals>
+                <configuration>
+                    <additionalparam>${javadoc.opts}</additionalparam>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <reportPlugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <configuration>
+                <additionalparam>${javadoc.opts}</additionalparam>
+              </configuration>
+            </plugin>
+          </reportPlugins>
+        </configuration>
+      </plugin>
     
   </plugins>
 </build>
@@ -149,6 +184,7 @@
       <organizationUrl>https://github.com/NirashaSewwandi/maven_test</organizationUrl>
     </developer>
   </developers>
+  
 
 
 
@@ -165,6 +201,8 @@
   
     <tag>HEAD</tag>
   </scm>
+
+  
 
     
 </project>
